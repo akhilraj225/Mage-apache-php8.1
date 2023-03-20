@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /app/web/pub
+
+	<Directory /app/web/pub>
+	    Options Indexes FollowSymLinks
+        EnableMMAP Off
+        EnableSendfile Off
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
